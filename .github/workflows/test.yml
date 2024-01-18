@@ -1,18 +1,19 @@
-name: CI/CD is Easy!
+name: Super-Linter
 
 on:
   push:
-      branches:
-          - master
+    branches:
+      - main
+
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-           node-version: 12
-      - run: npm ci
-      - run: npm test
-      - run: npm run build
-      - run: npm run deploy
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Super-Linter
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_ALL_CODEBASE: true
