@@ -13,13 +13,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Change to Project Directory
-        run: cd D:CI\.github\workflows
-
       - name: Set Up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 14
+
+      - name: Change to Project Directory
+        run: cd path/to/your/project
 
       - name: Install Dependencies
         run: npm install
