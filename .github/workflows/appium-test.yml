@@ -18,6 +18,8 @@ jobs:
         with:
           node-version: 14
 
+      - name: Change to Project Directory
+        run: cd CI/.github/workflows/package.json
       - name: Install Dependencies
         run: npm install
 
